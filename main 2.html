@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>formyxanxvv♥️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffd1ff);
+  text-align: center;
+  margin: 0;
+  padding: 18px;
+  color: white;
+  overflow-x: hidden;
+}
+
+.hidden { display: none; }
+
+/* Autoplay fallback overlay and controls */
+#play-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);color:#fff;z-index:9999}
+#play-overlay.hidden{display:none}
+#play-overlay button{background:#ff5a7a;border:none;padding:14px 20px;border-radius:10px;color:#fff;font-size:16px;cursor:pointer}
+#mute-toggle{position:fixed;right:12px;top:12px;background:rgba(255,255,255,0.9);border:1px solid #ddd;padding:8px;border-radius:6px}
+
+h1, h2 {
+  font-size: clamp(22px, 5vw, 34px);
+  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+p {
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.7;
+}
+
+/* Buttons */
+button {
+  padding: 14px 22px;
+  font-size: 16px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  margin: 8px;
+  transition: 0.2s ease;
+}
+
+.yes {
+  background: linear-gradient(135deg, #ff4f81, #ff9ad5);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.no {
+  background: black;
+  color: white;
+  position: absolute;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 22px;
+  margin: 16px auto;
+  max-width: 520px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Gift box */
+.gift-box {
+  width: min(150px, 42vw);
+  cursor: pointer;
+  transition: 0.25s ease;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.3));
+}
+.gift-box:hover {
+  transform: scale(1.12) rotate(-3deg);
+}
+
+/* Cute gift card styling */
+.gift{display:inline-block;position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));padding:12px;border-radius:18px;margin:10px;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease}
+.gift:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 30px rgba(0,0,0,0.18)}
+.gift::before{content:'🎀';position:absolute;left:10px;top:-8px;font-size:20px;transform:rotate(-12deg);filter:drop-shadow(0 4px 6px rgba(0,0,0,0.18))}
+.gift .gift-box{border-radius:14px;border:3px solid rgba(255,255,255,0.06);background:white}
+.gift .gift-label{margin-top:8px;font-weight:600;font-size:1.1rem;color:#000;text-shadow:0 2px 6px rgba(0,0,0,0.25)}
+.gift.celebrate::after{content:'✨';position:absolute;right:10px;bottom:10px;animation:twinkle 1.6s infinite}
+@keyframes twinkle{0%{opacity:0.2;transform:scale(.9)}50%{opacity:1;transform:scale(1.08)}100%{opacity:0.2;transform:scale(.9)}}
+
+/* Images */
+img {
+  max-width: 95%;
+  border-radius: 16px;
+  margin-top: 12px;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  color: pink;
+  animation: float 6s linear infinite;
+  font-size: 18px;
+  opacity: 0.8;
+}
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* Typing cursor */
+.cursor {
+  display: inline-block;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Cute play/pause button */
+.play-btn{
+  background: linear-gradient(135deg,#ff7aa2,#ffb6d9);
+  border: none;
+  color: white;
+  width:56px;height:56px;border-radius:50%;font-size:24px;cursor:pointer;box-shadow:0 8px 18px rgba(0,0,0,0.18);
+  display:inline-flex;align-items:center;justify-content:center;padding:0;transition:transform .15s ease
+}
+.play-btn.playing{transform:scale(1.06);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+.player-controls{margin-top:12px}
+</style>
+</head>
+
+<body>
+
+<script>
+
+// Floating hearts
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "💖";
+  h.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 6000);
+}, 450);
+</script>
+
+<!-- PAGE 1 -->
+<div id="page1" class="card">
+  <img src="https://i.pinimg.com/originals/42/eb/1f/42eb1fe6a8cc989aa34882e71c997869.gif">
+
+  <h1>Will you be my valentine? ♥️</h1>
+  <p>Ану-Үжингээс Билгүүдэйд — 2026.02.14</p>
+
+  <button class="yes" onclick="goYes()">Yes ♥️</button>
+  <button class="no" id="noBtn">No ❌</button>
+</div>
+
+<!-- Autoplay fallback overlay -->
+<div id="play-overlay" class="hidden" role="dialog" aria-live="polite">
+  <div>
+    <p style="text-align:center;margin:0 0 12px;color:white">Tap to start music</p>
+    <div style="text-align:center"><button id="play-btn">Play Music</button></div>
+  </div>
+</div>
+
+<button id="mute-toggle" class="hidden" aria-pressed="false">Mute</button>
+
+<!-- PAGE 2 -->
+<div id="page2" class="hidden card">
+  <h2>Зөвшөөрсөнд баярлалаа 🥰</h2>
+  <p>Бэлгээ kuromi дээр дарж нээнэ үү 🎁</p>
+
+  <img src="kuromi.gif" onclick="openGifts()">
+</div>
+
+<!-- PAGE 3 GIFTS -->
+<div id="page3" class="hidden card">
+  <h2>🎀 Жижигхэн бэлэг 🎀</h2>
+
+  <div class="gift" onclick="openGiftPage(1)">
+    <img src="box.jpg" class="gift-box" alt="Gift box">
+    <p class="gift-label">🎁</p>
+  </div>
+
+  <div class="gift" onclick="openGiftPage(2)">
+    <img src="box.jpg" class="gift-box" alt="Gift box">
+    <p class="gift-label">🌸</p>
+  </div>
+
+  <div class="gift" onclick="openGiftPage(3)">
+    <img src="box.jpg" class="gift-box" alt="Gift box">
+    <p class="gift-label">💌</p>
+  </div>
+
+  <div class="gift" onclick="openGiftPage(4)">
+    <img src="box.jpg" class="gift-box" alt="Gift box">
+    <p class="gift-label">🎵</p>
+  </div>
+
+  <div class="gift" onclick="openGiftPage(5)">
+    <img src="box.jpg" class="gift-box" alt="Gift box">
+    <p class="gift-label">🤭</p>
+  </div>
+</div>
+
+<!-- GIFT PAGE 1 -->
+<div id="giftPage1" class="hidden card">
+  <h2>🎁 Бэлэг 1</h2>
+  <p>Хайртай шүү ♥️</p>
+  <img src="firstphoto.jpg">
+  <button onclick="backToGifts()">⬅ Буцах</button>
+</div>
+
+<!-- GIFT PAGE 2 -->
+<div id="giftPage2" class="hidden card">
+  <h2>🌸 Бэлэг 2</h2>
+  <img src="flower.jpg">
+  <p> Хөөрхөн ханхүүд 💐</p>
+  <button onclick="backToGifts()">⬅ Буцах</button>
+</div>
+
+<!-- GIFT PAGE 3 (TYPING LETTER) -->
+<div id="giftPage3" class="hidden card">
+  <h2>💌 Бэлэг 3</h2>
+  <p id="typingText"></p><span class="cursor">|</span>
+  <button onclick="backToGifts()">⬅ Буцах</button>
+</div>
+
+<!-- GIFT PAGE 4 -->
+<div id="giftPage4" class="hidden card">
+  <h2>🎵 Бэлэг 4</h2>
+  <p>Би зүүдэллээ
+Чамайгаа зөндөө их санаж байна
+Зуун мянган бээрийн цаана байлаа ч
+Зүрхэндээ хамт байна♥️
+Би биш бид болохоор тайван
+Хол зай биднийг шалгаж байгаа юм тэ? гэж чи хөөрхөн инээхэд😻
+Зүрх бүлээцэнэ , жигүүртэй бол чам руу
+нисчихмээр
+Байдаг ч би тэсчихнэ ээ</p>
+  <audio id="song" src="music.mp3" autoplay muted></audio>
+  <div class="player-controls">
+    <button id="play-pause-btn" class="play-btn" aria-pressed="false" title="Play/Pause">💗</button>
+  </div>
+  <button onclick="backToGifts()">⬅ Буцах</button>
+</div>
+
+<!-- GIFT PAGE 5 -->
+<div id="giftPage5" class="hidden card">
+  <h2>🤭 Surprise</h2>
+  <img src="gift5.jpg" alt="Gift 5">
+  <p>Ану-Үжингээс авна уу 🤍</p>
+  <button onclick="backToGifts()">⬅ Буцах</button>
+</div>
+
+<script>
+// No runaway
+const noBtn = document.getElementById("noBtn");
+function moveNo() {
+  noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+  noBtn.style.top = Math.random() * (window.innerHeight - 60) + "px";
+}
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+// Navigation
+function goYes() {
+  page1.classList.add("hidden");
+  page2.classList.remove("hidden");
+  const muteToggle = document.getElementById('mute-toggle');
+  if (muteToggle) muteToggle.classList.add('hidden');
+}
+
+function openGifts() {
+  page2.classList.add("hidden");
+  page3.classList.remove("hidden");
+  const muteToggle = document.getElementById('mute-toggle');
+  if (muteToggle) muteToggle.classList.add('hidden');
+}
+
+function openGiftPage(n) {
+  page3.classList.add("hidden");
+  document.getElementById("giftPage" + n).classList.remove("hidden");
+  if (n === 3) startTyping();
+
+  // Show mute toggle only on the page that plays music (giftPage4)
+  const muteToggle = document.getElementById('mute-toggle');
+  if (muteToggle) {
+    if (n === 4) muteToggle.classList.remove('hidden');
+    else muteToggle.classList.add('hidden');
+  }
+}
+
+function backToGifts() {
+  document.querySelectorAll('[id^="giftPage"]').forEach(p => p.classList.add("hidden"));
+  page3.classList.remove("hidden");
+  const muteToggle = document.getElementById('mute-toggle');
+  if (muteToggle) muteToggle.classList.add('hidden');
+}
+
+// Typing effect text
+const letter = `Ямар ч сонин ааш зан гаргасан тэвчээд, уучладагт чинь баярлалаа  
+уг нь тэгмээргүй л байдаг ч хааяа өөрийн мэдэлгүй муухай аашилчихсан байдаг  
+дараа нь өөрийгөө юу хийснээ бодоод уур хүрээд байдаг шд кк.  
+Гэхдээ би том болох тусам илүү ухаантай мундаг эмэгтэй болох болохоор  
+намайг том болж байгаа үед минь хамт сургаж хамт байгаад баярлалаа♥️  
+Ирээдүйд өмнө ярьж байсан шигээ бүх юмыг алаад, аз жаргалтай амьдарцгаая💋`;
+
+let i = 0;
+function startTyping() {
+  const el = document.getElementById("typingText");
+  el.innerHTML = "";
+  i = 0;
+  const interval = setInterval(() => {
+    el.innerHTML += letter.charAt(i);
+    i++;
+    if (i >= letter.length) clearInterval(interval);
+  }, 22);
+}
+</script>
+
+</body>
+</html>
+
+<script>
+  // Autoplay (muted) + user-gesture fallback. Shows Unmute when muted playback starts.
+  (function(){
+    const audio = document.getElementById('song');
+    const overlay = document.getElementById('play-overlay');
+    const playBtn = document.getElementById('play-btn');
+    const muteToggle = document.getElementById('mute-toggle');
+
+    function showOverlay(show){ if (!overlay) return; overlay.classList.toggle('hidden', !show); }
+    function showMuteToggle(show){ if (!muteToggle) return; muteToggle.classList.toggle('hidden', !show); }
+
+    function onAutoplaySuccess(){
+      showOverlay(false);
+      // Only show mute toggle if the music page (giftPage4) is currently visible
+      const gp4 = document.getElementById('giftPage4');
+      if (gp4 && !gp4.classList.contains('hidden')) {
+        showMuteToggle(true);
+        if (muteToggle) {
+          muteToggle.textContent = 'Unmute';
+          muteToggle.setAttribute('aria-pressed', 'true');
+        }
+      } else {
+        showMuteToggle(false);
+      }
+    }
+
+    function onAutoplayFail(){
+      showOverlay(true);
+      showMuteToggle(false);
+    }
+
+    function tryPlay(){
+      if (!audio) return Promise.reject();
+      // ensure muted for autoplay attempt
+      audio.muted = true;
+      const p = audio.play();
+      if (p && typeof p.then === 'function'){
+        return p.then(() => onAutoplaySuccess()).catch(() => onAutoplayFail());
+      }
+      return Promise.reject();
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      tryPlay();
+      // Bind one-time gesture to start playback if blocked
+      const start = () => {
+        if (!audio) return;
+        audio.play().then(() => onAutoplaySuccess()).catch(() => onAutoplayFail());
+      };
+      ['click','keydown','touchstart'].forEach(e => document.addEventListener(e, start, {once:true, passive:true}));
+    });
+
+    if (playBtn) playBtn.addEventListener('click', ()=>{
+      if (!audio) return;
+      audio.play().then(()=> onAutoplaySuccess()).catch(()=> onAutoplayFail());
+    });
+
+    // Play/pause cute button
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    function updatePlayButton(){
+      if (!playPauseBtn || !audio) return;
+      if (audio.paused) {
+        playPauseBtn.textContent = '🤍';
+        playPauseBtn.classList.remove('playing');
+        playPauseBtn.setAttribute('aria-pressed','false');
+      } else {
+        playPauseBtn.textContent = '💗';
+        playPauseBtn.classList.add('playing');
+        playPauseBtn.setAttribute('aria-pressed','true');
+      }
+    }
+
+    if (playPauseBtn) playPauseBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      if (!audio) return;
+      if (audio.paused) audio.play().then(()=> updatePlayButton()).catch(()=>{});
+      else audio.pause();
+      updatePlayButton();
+    });
+
+    if (audio) {
+      audio.addEventListener('play', updatePlayButton);
+      audio.addEventListener('pause', updatePlayButton);
+      // initialize button state
+      setTimeout(updatePlayButton, 300);
+    }
+
+    if (muteToggle) muteToggle.addEventListener('click', ()=>{
+      if (!audio) return;
+      // Toggle mute; when unmuted, reflect as 'Mute' label
+      audio.muted = !audio.muted;
+      if (audio.muted) {
+        muteToggle.textContent = 'Unmute';
+        muteToggle.setAttribute('aria-pressed', 'true');
+      } else {
+        muteToggle.textContent = 'Mute';
+        muteToggle.setAttribute('aria-pressed', 'false');
+      }
+    });
+  })();
+</script>
